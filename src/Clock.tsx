@@ -31,7 +31,9 @@ function Clock() {
       <div className="sec">
         <div className="sc" style={{ transform: seconds }} id="sc"></div>
       </div>
-      <h1>GitHub: https://github.com/WWWolverine/Clock</h1>
+      <h1>
+        GitHub: <a target="_blank">https://github.com/WWWolverine/Clock</a>
+      </h1>
     </div>
   );
 }
