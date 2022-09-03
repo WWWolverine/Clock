@@ -41,37 +41,15 @@ function Clock() {
   const deg = 6;
 
   const clock = () => {
-    let day = new Date(
-      date?.data?.datetime?.year,
-      date?.data?.datetime?.month,
-      date?.data?.datetime?.day,
-      date?.data?.datetime?.hour_24_wilz,
-      date?.data?.datetime?.minutes,
-      date?.data?.datetime?.seconds
-    );
-
-    let hh = day.getHours() * 30;
-    let mm = day.getMinutes() * deg;
-    let ss = day.getSeconds() * deg;
+    let hh = date?.data.datetime?.hour_24_wilz * 30;
+    let mm = date?.data.datetime?.minutes * deg;
+    let ss = date?.data.datetime?.seconds * deg;
 
     setHour(`rotateZ(${hh + mm / 12}deg)`);
     setMinutes(`rotateZ(${mm}deg)`);
     setSeconds(`rotateZ(${ss}deg)`);
   };
-
-  const timer = () => {
-    setInterval(clock, 1000);
-  };
-
-  setInterval(timer, 1000);
-  // setInterval(() => {
-
-  //   }
-  //   clock();
-  //   setInterval(() => {
-  //     clock();
-  //   }, 1000);
-  // }, 1000);
+  setTimeout(clock, 1000);
 
   return (
     <div className="clock">
